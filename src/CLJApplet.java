@@ -25,7 +25,8 @@ ArrayList<>();
 
  @Override
  public void init() {
- MUI mg = new MUI();
+// MUI mg = new MUI(); //project 3 did not implement the singleton
+  MUI mg = MUI.getMUI(); // this one edited to make use of the singleton
  a.add(perF1);
  a.add(rel1);
  a.add(proF1);

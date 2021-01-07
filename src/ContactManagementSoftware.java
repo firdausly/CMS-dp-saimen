@@ -20,7 +20,7 @@ public class ContactManagementSoftware implements Serializable{
  private static ArrayList<Acquaintances> ca1 = new ArrayList<>();
 
  public static void main(String[] args) {
- mg = MUI.getMUI();
+ mg = MUI.getMUI(); //already implemented the singleton with the correct way, no need to change
  a.add(perF1);
  a.add(rel1);
  a.add(proF1);
