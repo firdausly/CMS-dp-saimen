@@ -179,16 +179,19 @@ public class MUI extends javax.swing.JFrame {
         }
     }
     
+    //make MUI private since using singleton so that only once is initiated
+    //and called using getMUI() insted of new MUI()
+    //originally it is public.
     private MUI() {
         initComponents();
         String[] columnNames = {"S.No", "Name", "Mobile"," Email"};
         DefaultTableModel model = new DefaultTableModel(null, columnNames);
-        jTable1.setModel(model);
+        jXTable1.setModel(model);
         setUpTableData();
     }
 
     public final void setUpTableData() {
-        DefaultTableModel tableModel = (DefaultTableModel) jTable1.getModel();
+        DefaultTableModel tableModel = (DefaultTableModel) jXTable1.getModel();
         tableModel.setRowCount(0);
         ArrayList<Acquaintances> list;
         try{        
@@ -205,7 +208,7 @@ public class MUI extends javax.swing.JFrame {
             data[3] = list.get(i).getEmail();
             tableModel.addRow(data);
         }
-        jTable1.setModel(tableModel);
+        jXTable1.setModel(tableModel);
         tableModel.fireTableDataChanged();
     }
 
@@ -233,7 +236,7 @@ public class MUI extends javax.swing.JFrame {
         jButton7 = new javax.swing.JButton();
         jButton8 = new javax.swing.JButton();
         jScrollPane7 = new javax.swing.JScrollPane();
-        jTable1 = new javax.swing.JTable();
+        jXTable1 = new javax.swing.JTable();
         jPanel2 = new javax.swing.JPanel();
         jScrollPane3 = new javax.swing.JScrollPane();
         details = new javax.swing.JTextPane();
@@ -338,7 +341,7 @@ public class MUI extends javax.swing.JFrame {
             }
         });
 
-        jTable1.setModel(new javax.swing.table.DefaultTableModel(
+        jXTable1.setModel(new javax.swing.table.DefaultTableModel(
             new Object [][] {
                 {null, null, null, null},
                 {null, null, null, null},
@@ -349,7 +352,7 @@ public class MUI extends javax.swing.JFrame {
                 "Title 1", "Title 2", "Title 3", "Title 4"
             }
         ));
-        jScrollPane7.setViewportView(jTable1);
+        jScrollPane7.setViewportView(jXTable1);
 
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
@@ -906,7 +909,7 @@ public class MUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(mg, "Select a category!");
             return;
         }
-        int tindex = jTable1.getSelectedRow();
+        int tindex = jXTable1.getSelectedRow();
         if(tindex < 0){
             JOptionPane.showMessageDialog(mg, "Select an entry!");
             return;
@@ -926,7 +929,7 @@ public class MUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(mg, "Select a category!");
             return;
         }
-        int tindex = jTable1.getSelectedRow();
+        int tindex = jXTable1.getSelectedRow();
         if(tindex < 0){
             JOptionPane.showMessageDialog(mg, "Select an entry!");
             return;
@@ -972,7 +975,7 @@ public class MUI extends javax.swing.JFrame {
             JOptionPane.showMessageDialog(mg, "Select a category!");
             return;
         }
-        int tindex = jTable1.getSelectedRow();
+        int tindex = jXTable1.getSelectedRow();
         if(tindex < 0){
             JOptionPane.showMessageDialog(mg, "Select an entry!");
             return;
@@ -1071,7 +1074,7 @@ public class MUI extends javax.swing.JFrame {
     private javax.swing.JScrollPane jScrollPane5;
     private javax.swing.JScrollPane jScrollPane6;
     private javax.swing.JScrollPane jScrollPane7;
-    private javax.swing.JTable jTable1;
+    private javax.swing.JTable jXTable1;
     private javax.swing.JTextField mobile;
     private javax.swing.JTextField name;
     private javax.swing.JTextArea one;
