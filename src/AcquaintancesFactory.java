@@ -5,7 +5,7 @@
  */
 
 /**
- *
+ * ngetes kerol
  * @author alang
  */
 public class AcquaintancesFactory {
