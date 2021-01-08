@@ -668,30 +668,37 @@ public class MUI extends javax.swing.JFrame {
         // TODO add your handling code here:
     }//GEN-LAST:event_nameActionPerformed
 
-        public boolean MobileNoChecker(String str){
-        int x;
-        if(str.isEmpty() || str.length() < 6 || str.length() > 15)
-            return false;
-        for(int j = 0 ; j < str.length() ; j++)
-        {
-            x = (int)str.charAt(j);
-            if( x < 48 || x > 57 )
-            return false;    
-        }
-        return true;
+    //overwrite method in MobileNoChecker(do not use the template design pattern)
+    public boolean MobileNoChecker(String str) {
+        //        int x;
+        //        if(str.isEmpty() || str.length() < 6 || str.length() > 15)
+        //            return false;
+        //        for(int j = 0 ; j < str.length() ; j++)
+        //        {
+        //            x = (int)str.charAt(j);
+        //            if( x < 48 || x > 57 )
+        //            return false;    
+        //        }
+        //        return true;
+        Validator validM=new MobileNoChecker(str);
+        return validM.checkValid();
+        
     }
-    
-    public boolean validDate(String Date){
-        String pattern = "[0-3][0-9]/[0-1][0-9]/[0-9]{4}";
-        Pattern r = Pattern.compile(pattern);
-        Matcher m = r.matcher(Date);
-        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
-        if(!m.find()){
-            JOptionPane.showMessageDialog(mg, "Enter a valid date");
-            return false;
-        }
-        else
-            return true;
+    //overwrite method in validDate(do not use the template design pattern)
+    public boolean validDate(String Date) {
+//        String pattern = "[0-3][0-9]/[0-1][0-9]/[0-9]{4}";
+//        Pattern r = Pattern.compile(pattern);
+//        Matcher m = r.matcher(Date);
+//        SimpleDateFormat sdf = new SimpleDateFormat("dd/MM/yyyy");
+//        if(!m.find()){
+//            JOptionPane.showMessageDialog(mg, "Enter a valid date");
+//            return false;
+//        }
+//        else
+//            return true;
+        Validator validD = new validDate(Date);
+        return validD.checkValid();
+
     }
         
     private void jButton10ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jButton10ActionPerformed
