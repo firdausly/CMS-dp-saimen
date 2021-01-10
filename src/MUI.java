@@ -681,7 +681,7 @@ public class MUI extends javax.swing.JFrame {
         //        }
         //        return true;
         Validator validM=new MobileNoChecker(str);
-        return validM.checkValid();
+        return validM.isValid();
         
     }
     //overwrite method in validDate(do not use the template design pattern)
@@ -697,7 +697,7 @@ public class MUI extends javax.swing.JFrame {
 //        else
 //            return true;
         Validator validD = new validDate(Date);
-        return validD.checkValid();
+        return validD.isValid();
 
     }
         
